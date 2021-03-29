@@ -61,19 +61,19 @@ config.authorization = {
   },
 };
 
-config.cors = {
-  origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-  credentials: true
-};
-
 // list of paths that will not check authentication/authorization
 // example: ['/public/*', '/static/css/']
 config.public_paths = [];
 
 config.magic_key = undefined;
 config.auth_for_nginx =  false;
+
+// canismajor config
+config.canismajor = {
+  endpoint: process.env.CM_NOTIFY || 'http://localhost:4000/notify/eth',
+  verbs: [
+    'POST','PUT'
+  ]
+} 
 
 module.exports = config;
