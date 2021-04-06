@@ -69,9 +69,6 @@ config.magic_key = undefined;
 config.auth_for_nginx = false;
 
 // canis major endpoint
-config.canismajor = {
-  endpoint: process.env.CM_NOTIFY || 'http://localhost:4000/notify',
-  verbs: ['POST', 'PUT']
-};
+config.canismajor = 'http://localhost:4000';
 
 module.exports = config;
