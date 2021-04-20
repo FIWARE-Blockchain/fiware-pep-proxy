@@ -24,6 +24,19 @@ This project is part of [FIWARE](https://www.fiware.org/). For more information 
 | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 
 
+## Important
+
+This pep proxy is in experimental phase for the CanisMajor adaptor integration with few changes:
+
+```
+CANIS_MAJOR_URL added as a ENV
+
+and docker image is at:
+
+singhhp10691/fiware-pep-proxy-extended:0.1
+
+```
+
 ## Content
 
 -   [Install](#how-to-build--install)

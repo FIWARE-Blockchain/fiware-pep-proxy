@@ -1,5 +1,5 @@
 ARG NODE_VERSION=10
-ARG GITHUB_ACCOUNT=ging
+ARG GITHUB_ACCOUNT=fiware-blockchain
 ARG GITHUB_REPOSITORY=fiware-pep-proxy
 
 ########################################################################################
@@ -42,15 +42,15 @@ ARG GITHUB_ACCOUNT
 ARG GITHUB_REPOSITORY
 ARG NODE_VERSION
 
-LABEL "maintainer"="FIWARE Identity Manager Team. DIT-UPM"
-LABEL "org.opencontainers.image.authors"=""
-LABEL "org.opencontainers.image.documentation"="https://fiware-idm.readthedocs.io/"
-LABEL "org.opencontainers.image.vendor"="Universidad Politécnica de Madrid."
-LABEL "org.opencontainers.image.licenses"="MIT"
-LABEL "org.opencontainers.image.title"="PEP Proxy - Wilma"
-LABEL "org.opencontainers.image.description"="Support for proxy functions within OAuth2-based authentication schemas. Also implements PEP functions within an XACML-based access control schema."
-LABEL "org.opencontainers.image.source"=https://github.com/${GITHUB_ACCOUNT}/${GITHUB_REPOSITORY}
-LABEL "org.nodejs.version"=${NODE_VERSION}
+# LABEL "maintainer"="FIWARE Identity Manager Team. DIT-UPM"
+# LABEL "org.opencontainers.image.authors"=""
+# LABEL "org.opencontainers.image.documentation"="https://fiware-idm.readthedocs.io/"
+# LABEL "org.opencontainers.image.vendor"="Universidad Politécnica de Madrid."
+# LABEL "org.opencontainers.image.licenses"="MIT"
+# LABEL "org.opencontainers.image.title"="PEP Proxy - Wilma"
+# LABEL "org.opencontainers.image.description"="Support for proxy functions within OAuth2-based authentication schemas. Also implements PEP functions within an XACML-based access control schema."
+# LABEL "org.opencontainers.image.source"=https://github.com/${GITHUB_ACCOUNT}/${GITHUB_REPOSITORY}
+# LABEL "org.nodejs.version"=${NODE_VERSION}
 
 COPY --from=builder /opt/fiware-pep-proxy /opt/fiware-pep-proxy
 COPY --from=anon-user /etc/passwd /etc/shadow /etc/group /etc/
@@ -97,3 +97,4 @@ HEALTHCHECK  --interval=30s --timeout=3s --start-period=60s \
 #    PEP_PROXY_CORS_MAX_AGE
 #    PEP_PROXY_AUTH_FOR_NGINX
 #    PEP_PROXY_MAGIC_KEY
+#    CANIS_MAJOR_URL
